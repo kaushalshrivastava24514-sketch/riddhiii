@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Riddhi 💕</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cherry: #C0162C;
+      --deep-cherry: #8B0016;
+      --crimson: #DC143C;
+      --blush: #FFB6C1;
+      --soft-pink: #FFD6DC;
+      --petal: #FFECF0;
+      --gold: #F5C842;
+      --cream: #FFF5F7;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--cherry);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      overflow-x: hidden;
+      position: relative;
+      cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><text y='26' font-size='26'>💕</text></svg>") 16 16, auto;
+    }
+
+    /* === BACKGROUND TEXTURE === */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(180,0,30,0.6) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(255,100,120,0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 60% 80%, rgba(139,0,22,0.7) 0%, transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* === FLOATING HEARTS === */
+    .hearts-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -80px;
+      font-size: 24px;
+      opacity: 0;
+      animation: floatUp linear infinite;
+      filter: drop-shadow(0 0 6px rgba(255,150,170,0.5));
+    }
+
+    @keyframes floatUp {
+      0%   { transform: translateY(0) rotate(-15deg) scale(0.8); opacity: 0; }
+      10%  { opacity: 1; }
+      50%  { transform: translateY(-45vh) rotate(15deg) scale(1.1); }
+      85%  { opacity: 0.6; }
+      100% { transform: translateY(-105vh) rotate(-10deg) scale(0.9); opacity: 0; }
+    }
+
+    /* === MAIN CARD === */
+    .card-wrapper {
+      position: relative;
+      z-index: 10;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      max-width: 680px;
+      width: 100%;
+      background: linear-gradient(145deg, #fff0f3 0%, #ffe4ea 40%, #ffd6de 100%);
+      border-radius: 32px;
+      padding: 56px 52px;
+      text-align: center;
+      box-shadow:
+        0 0 0 3px rgba(255,255,255,0.5),
+        0 0 0 6px rgba(192,22,44,0.3),
+        0 30px 80px rgba(139,0,22,0.5),
+        0 0 120px rgba(255,100,120,0.2);
+      position: relative;
+      overflow: hidden;
+      animation: cardIn 1s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+
+    @keyframes cardIn {
+      from { transform: translateY(60px) scale(0.88); opacity: 0; }
+      to   { transform: translateY(0) scale(1); opacity: 1; }
+    }
+
+    /* Decorative corner hearts on card */
+    .card::before, .card::after {
+      content: '❤';
+      position: absolute;
+      font-size: 80px;
+      opacity: 0.07;
+      color: var(--crimson);
+    }
+    .card::before { top: -10px; left: -10px; transform: rotate(-20deg); }
+    .card::after  { bottom: -10px; right: -10px; transform: rotate(20deg); }
+
+    /* Inner card shimmer */
+    .card-inner-deco {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 50%, rgba(255,200,210,0.2) 100%);
+      border-radius: 32px;
+      pointer-events: none;
+    }
+
+    /* === SORRY BADGE === */
+    .sorry-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--cherry), var(--deep-cherry));
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding: 8px 24px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 20px rgba(192,22,44,0.5);
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 4px 20px rgba(192,22,44,0.5); }
+      50% { transform: scale(1.04); box-shadow: 0 6px 30px rgba(192,22,44,0.7); }
+    }
+
+    /* === BIG HEART === */
+    .big-heart {
+      font-size: 72px;
+      display: block;
+      margin-bottom: 12px;
+      animation: heartBeat 1.4s ease-in-out infinite;
+      filter: drop-shadow(0 0 20px rgba(220,20,60,0.6));
+    }
+
+    @keyframes heartBeat {
+      0%, 100% { transform: scale(1); }
+      14%       { transform: scale(1.18); }
+      28%       { transform: scale(1); }
+      42%       { transform: scale(1.12); }
+      70%       { transform: scale(1); }
+    }
+
+    /* === NAME === */
+    .name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 8vw, 62px);
+      font-style: italic;
+      color: var(--cherry);
+      line-height: 1;
+      margin-bottom: 8px;
+      text-shadow: 2px 2px 0 rgba(255,255,255,0.8), 0 4px 20px rgba(192,22,44,0.2);
+      letter-spacing: -1px;
+      animation: nameSlide 1s 0.3s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+
+    @keyframes nameSlide {
+      from { transform: translateX(-30px); opacity: 0; }
+      to   { transform: translateX(0); opacity: 1; }
+    }
+
+    /* === DIVIDER === */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0 28px;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(192,22,44,0.4), transparent);
+    }
+    .divider span { color: var(--cherry); font-size: 18px; }
+
+    /* === APOLOGY TEXT === */
+    .apology-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 40px);
+      color: var(--deep-cherry);
+      margin-bottom: 24px;
+      line-height: 1.2;
+      animation: fadeUp 1s 0.5s both;
+    }
+
+    .apology-body {
+      font-size: clamp(17px, 2.5vw, 20px);
+      color: #7a1a28;
+      line-height: 1.85;
+      font-weight: 300;
+      animation: fadeUp 1s 0.7s both;
+    }
+
+    .apology-body em {
+      font-style: italic;
+      color: var(--crimson);
+    }
+
+    @keyframes fadeUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+
+    /* === HIGHLIGHT LINE === */
+    .highlight {
+      display: inline-block;
+      position: relative;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(19px, 3vw, 23px);
+      color: var(--cherry);
+      margin: 20px 0 8px;
+    }
+    .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--blush), var(--cherry), var(--blush));
+      border-radius: 3px;
+    }
+
+    /* === SIGNATURE === */
+    .signature {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      animation: fadeUp 1s 0.9s both;
+    }
+
+    .signature-hearts { font-size: 22px; letter-spacing: 8px; }
+
+    .signature-name {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 26px;
+      color: var(--cherry);
+      border-top: 1px solid rgba(192,22,44,0.25);
+      padding-top: 12px;
+      width: 60%;
+    }
+
+    /* === PETAL SCATTER === */
+    .petal {
+      position: fixed;
+      font-size: 18px;
+      opacity: 0;
+      pointer-events: none;
+      animation: petalFall linear infinite;
+      z-index: 2;
+    }
+
+    @keyframes petalFall {
+      0%   { transform: translateY(-30px) rotate(0deg) translateX(0); opacity: 0; }
+      10%  { opacity: 0.8; }
+      100% { transform: translateY(110vh) rotate(360deg) translateX(60px); opacity: 0; }
+    }
+
+    /* === SPARKLES === */
+    .sparkle {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blush);
+      pointer-events: none;
+      z-index: 3;
+      animation: sparkleAnim ease-in-out infinite;
+    }
+
+    @keyframes sparkleAnim {
+      0%, 100% { opacity: 0; transform: scale(0); }
+      50%       { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating hearts -->
+  <div class="hearts-container" id="heartsContainer"></div>
+
+  <!-- Main card -->
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="card-inner-deco"></div>
+
+      <div class="sorry-badge">A Message From the Heart</div>
+
+      <span class="big-heart">💗</span>
+
+      <h1 class="name">Riddhi</h1>
+
+      <div class="divider"><span>♥</span></div>
+
+      <h2 class="apology-title">I am truly, deeply sorry.</h2>
+
+      <p class="apology-body">
+        There are moments in life when we say or do things that hurt the people who matter most to us —
+        and I am so ashamed that I let one of those moments happen with <em>you</em>.
+      </p>
+
+      <br/>
+
+      <p class="apology-body">
+        You deserve nothing but kindness, warmth, and respect. Every single day.
+        And I failed to give you that, and for that, I am <em>genuinely sorry</em> from the
+        very bottom of my heart.
+      </p>
+
+      <br/>
+
+      <div class="highlight">You mean so much to me, Riddhi. 💕</div>
+
+      <br/>
+
+      <p class="apology-body">
+        I hope you can find it in your beautiful heart to forgive me —
+        not because I deserve it, but because I promise to be better for you,
+        always. You are <em>irreplaceable</em> and I never want to lose you.
+      </p>
+
+      <div class="signature">
+        <div class="signature-hearts">💓 💗 💓</div>
+        <div class="signature-name">With all my love & remorse</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── Floating hearts ──────────────────────────────────────────
+    const heartEmojis = ['💗','💕','💖','💘','💝','❤️','🩷','💞'];
+    const container = document.getElementById('heartsContainer');
+
+    function spawnHeart() {
+      const el = document.createElement('div');
+      el.className = 'heart';
+      el.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+      el.style.left = Math.random() * 100 + 'vw';
+      el.style.fontSize = (16 + Math.random() * 28) + 'px';
+      el.style.animationDuration = (5 + Math.random() * 7) + 's';
+      el.style.animationDelay = (Math.random() * 3) + 's';
+      container.appendChild(el);
+      setTimeout(() => el.remove(), 14000);
+    }
+
+    for (let i = 0; i < 18; i++) setTimeout(spawnHeart, i * 300);
+    setInterval(spawnHeart, 700);
+
+    // ── Falling petals ───────────────────────────────────────────
+    const petals = ['🌸','🌺','✿','❀'];
+
+    function spawnPetal() {
+      const el = document.createElement('div');
+      el.className = 'petal';
+      el.textContent = petals[Math.floor(Math.random() * petals.length)];
+      el.style.left = Math.random() * 100 + 'vw';
+      el.style.top = '-40px';
+      el.style.fontSize = (12 + Math.random() * 14) + 'px';
+      el.style.animationDuration = (8 + Math.random() * 10) + 's';
+      el.style.animationDelay = (Math.random() * 2) + 's';
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 22000);
+    }
+
+    for (let i = 0; i < 8; i++) setTimeout(spawnPetal, i * 800);
+    setInterval(spawnPetal, 2200);
+
+    // ── Sparkles ─────────────────────────────────────────────────
+    const sparkleColors = ['#FFB6C1','#FF69B4','#DC143C','#FF8FA3','#FFC0CB'];
+
+    function spawnSparkle() {
+      const el = document.createElement('div');
+      el.className = 'sparkle';
+      el.style.left = Math.random() * 100 + 'vw';
+      el.style.top  = Math.random() * 100 + 'vh';
+      el.style.background = sparkleColors[Math.floor(Math.random() * sparkleColors.length)];
+      el.style.width = el.style.height = (4 + Math.random() * 6) + 'px';
+      el.style.animationDuration = (1.5 + Math.random() * 2) + 's';
+      el.style.animationDelay = Math.random() + 's';
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 5000);
+    }
+
+    for (let i = 0; i < 20; i++) spawnSparkle();
+    setInterval(spawnSparkle, 400);
+
+    // ── Click heart burst ────────────────────────────────────────
+    document.addEventListener('click', (e) => {
+      for (let i = 0; i < 6; i++) {
+        const h = document.createElement('div');
+        h.style.cssText = `
+          position: fixed;
+          left: ${e.clientX}px;
+          top: ${e.clientY}px;
+          font-size: ${14 + Math.random() * 18}px;
+          pointer-events: none;
+          z-index: 9999;
+          animation: clickHeart 1s ease-out forwards;
+          --dx: ${(Math.random() - 0.5) * 120}px;
+          --dy: ${-(40 + Math.random() * 80)}px;
+        `;
+        h.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 1000);
+      }
+    });
+
+    // Inject keyframe for click hearts
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes clickHeart {
+        0%   { transform: translate(0,0) scale(1); opacity: 1; }
+        100% { transform: translate(var(--dx), var(--dy)) scale(0.4); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
